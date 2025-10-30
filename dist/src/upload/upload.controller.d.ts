@@ -2,6 +2,7 @@ import { CloudinaryService } from '../cloudinary/cloudinary.service';
 export declare class UploadController {
     private readonly cloudinaryService;
     constructor(cloudinaryService: CloudinaryService);
+    private validateImage;
     uploadImage(file: Express.Multer.File): Promise<{
         url: any;
         publicId: any;
@@ -18,6 +19,17 @@ export declare class UploadController {
         publicId: any;
     }>;
     uploadShopBanner(file: Express.Multer.File): Promise<{
+        url: any;
+        publicId: any;
+    }>;
+    uploadProductImages(files: Express.Multer.File[]): Promise<{
+        images: {
+            url: any;
+            publicId: any;
+        }[];
+        count: number;
+    }>;
+    uploadCategoryImage(file: Express.Multer.File): Promise<{
         url: any;
         publicId: any;
     }>;

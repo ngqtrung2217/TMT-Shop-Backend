@@ -17,6 +17,8 @@ const users_module_1 = require("./users/users.module");
 const shops_module_1 = require("./shops/shops.module");
 const cloudinary_module_1 = require("./cloudinary/cloudinary.module");
 const upload_module_1 = require("./upload/upload.module");
+const categories_module_1 = require("./categories/categories.module");
+const products_module_1 = require("./products/products.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -32,6 +34,8 @@ exports.AppModule = AppModule = __decorate([
             shops_module_1.ShopsModule,
             cloudinary_module_1.CloudinaryModule,
             upload_module_1.UploadModule,
+            categories_module_1.CategoriesModule,
+            products_module_1.ProductsModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

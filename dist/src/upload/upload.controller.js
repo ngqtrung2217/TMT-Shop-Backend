@@ -22,10 +22,7 @@ let UploadController = class UploadController {
     constructor(cloudinaryService) {
         this.cloudinaryService = cloudinaryService;
     }
-    async uploadImage(file) {
-        if (!file) {
-            throw new common_1.BadRequestException('No file uploaded');
-        }
+    validateImage(file) {
         const allowedMimeTypes = [
             'image/jpeg',
             'image/png',
@@ -33,12 +30,18 @@ let UploadController = class UploadController {
             'image/webp',
         ];
         if (!allowedMimeTypes.includes(file.mimetype)) {
-            throw new common_1.BadRequestException('Only image files are allowed');
+            throw new common_1.BadRequestException('Only image files are allowed (jpeg, png, jpg, webp)');
         }
         const maxSize = 5 * 1024 * 1024;
         if (file.size > maxSize) {
             throw new common_1.BadRequestException('File size must not exceed 5MB');
         }
+    }
+    async uploadImage(file) {
+        if (!file) {
+            throw new common_1.BadRequestException('No file uploaded');
+        }
+        this.validateImage(file);
         const result = await this.cloudinaryService.uploadImage(file);
         return {
             url: result.secure_url,
@@ -52,6 +55,7 @@ let UploadController = class UploadController {
         if (!file) {
             throw new common_1.BadRequestException('No file uploaded');
         }
+        this.validateImage(file);
         const result = await this.cloudinaryService.uploadImage(file, 'tmtshop/avatars');
         return {
             url: result.secure_url,
@@ -62,6 +66,7 @@ let UploadController = class UploadController {
         if (!file) {
             throw new common_1.BadRequestException('No file uploaded');
         }
+        this.validateImage(file);
         const result = await this.cloudinaryService.uploadImage(file, 'tmtshop/shops/logos');
         return {
             url: result.secure_url,
@@ -72,7 +77,37 @@ let UploadController = class UploadController {
         if (!file) {
             throw new common_1.BadRequestException('No file uploaded');
         }
+        this.validateImage(file);
         const result = await this.cloudinaryService.uploadImage(file, 'tmtshop/shops/banners');
+        return {
+            url: result.secure_url,
+            publicId: result.public_id,
+        };
+    }
+    async uploadProductImages(files) {
+        if (!files || files.length === 0) {
+            throw new common_1.BadRequestException('No files uploaded');
+        }
+        if (files.length > 10) {
+            throw new common_1.BadRequestException('Maximum 10 images allowed per product');
+        }
+        files.forEach((file) => this.validateImage(file));
+        const uploadPromises = files.map((file) => this.cloudinaryService.uploadImage(file, 'tmtshop/products'));
+        const results = await Promise.all(uploadPromises);
+        return {
+            images: results.map((result) => ({
+                url: result.secure_url,
+                publicId: result.public_id,
+            })),
+            count: results.length,
+        };
+    }
+    async uploadCategoryImage(file) {
+        if (!file) {
+            throw new common_1.BadRequestException('No file uploaded');
+        }
+        this.validateImage(file);
+        const result = await this.cloudinaryService.uploadImage(file, 'tmtshop/categories');
         return {
             url: result.secure_url,
             publicId: result.public_id,
@@ -112,6 +147,22 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], UploadController.prototype, "uploadShopBanner", null);
+__decorate([
+    (0, common_1.Post)('product-images'),
+    (0, common_1.UseInterceptors)((0, platform_express_1.FilesInterceptor)('files', 10)),
+    __param(0, (0, common_1.UploadedFiles)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Array]),
+    __metadata("design:returntype", Promise)
+], UploadController.prototype, "uploadProductImages", null);
+__decorate([
+    (0, common_1.Post)('category-image'),
+    (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('file')),
+    __param(0, (0, common_1.UploadedFile)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], UploadController.prototype, "uploadCategoryImage", null);
 exports.UploadController = UploadController = __decorate([
     (0, common_1.Controller)('upload'),
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
