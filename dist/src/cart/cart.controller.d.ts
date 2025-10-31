@@ -31,8 +31,8 @@ export declare class CartController {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        productId: string;
         quantity: number;
+        productId: string;
         cartId: string;
     }>;
     getCart(userId: string): Promise<{
@@ -69,8 +69,8 @@ export declare class CartController {
             id: string;
             createdAt: Date;
             updatedAt: Date;
-            productId: string;
             quantity: number;
+            productId: string;
             cartId: string;
         })[];
         summary: {
@@ -106,8 +106,8 @@ export declare class CartController {
         id: string;
         createdAt: Date;
         updatedAt: Date;
-        productId: string;
         quantity: number;
+        productId: string;
         cartId: string;
     }>;
     removeFromCart(userId: string, itemId: string): Promise<{

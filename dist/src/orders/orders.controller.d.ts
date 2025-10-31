@@ -32,8 +32,8 @@ export declare class OrdersController {
             id: string;
             createdAt: Date;
             price: number;
-            productId: string;
             quantity: number;
+            productId: string;
             orderId: string;
         })[];
     } & {
@@ -72,8 +72,8 @@ export declare class OrdersController {
                 id: string;
                 createdAt: Date;
                 price: number;
-                productId: string;
                 quantity: number;
+                productId: string;
                 orderId: string;
             })[];
         } & {
@@ -119,8 +119,8 @@ export declare class OrdersController {
                 id: string;
                 createdAt: Date;
                 price: number;
-                productId: string;
                 quantity: number;
+                productId: string;
                 orderId: string;
             })[];
         } & {
@@ -166,8 +166,8 @@ export declare class OrdersController {
                 id: string;
                 createdAt: Date;
                 price: number;
-                productId: string;
                 quantity: number;
+                productId: string;
                 orderId: string;
             })[];
         } & {
@@ -224,8 +224,8 @@ export declare class OrdersController {
             id: string;
             createdAt: Date;
             price: number;
-            productId: string;
             quantity: number;
+            productId: string;
             orderId: string;
         })[];
     } & {
@@ -267,8 +267,8 @@ export declare class OrdersController {
             id: string;
             createdAt: Date;
             price: number;
-            productId: string;
             quantity: number;
+            productId: string;
             orderId: string;
         })[];
     } & {
