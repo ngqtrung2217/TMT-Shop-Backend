@@ -10,6 +10,8 @@ import { CloudinaryModule } from './cloudinary/cloudinary.module';
 import { UploadModule } from './upload/upload.module';
 import { CategoriesModule } from './categories/categories.module';
 import { ProductsModule } from './products/products.module';
+import { CartModule } from './cart/cart.module';
+import { OrdersModule } from './orders/orders.module';
 
 @Module({
   imports: [
@@ -24,6 +26,8 @@ import { ProductsModule } from './products/products.module';
     UploadModule,
     CategoriesModule,
     ProductsModule,
+    CartModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
