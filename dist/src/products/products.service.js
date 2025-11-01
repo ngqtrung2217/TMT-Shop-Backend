@@ -25,7 +25,7 @@ let ProductsService = class ProductsService {
             throw new common_1.NotFoundException('Shop not found');
         }
         if (shop.ownerId !== userId) {
-            throw new common_1.ForbiddenException('You can only create products for your own shop');
+            throw new common_1.ForbiddenException('You can only create products for your own shop', userId);
         }
         if (createProductDto.categoryId) {
             const category = await this.prisma.category.findUnique({

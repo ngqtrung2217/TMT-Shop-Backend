@@ -33,8 +33,8 @@ export declare class OrdersService {
             id: string;
             createdAt: Date;
             price: number;
-            quantity: number;
             productId: string;
+            quantity: number;
             orderId: string;
         })[];
     } & {
@@ -79,8 +79,8 @@ export declare class OrdersService {
                 id: string;
                 createdAt: Date;
                 price: number;
-                quantity: number;
                 productId: string;
+                quantity: number;
                 orderId: string;
             })[];
         } & {
@@ -126,8 +126,8 @@ export declare class OrdersService {
                 id: string;
                 createdAt: Date;
                 price: number;
-                quantity: number;
                 productId: string;
+                quantity: number;
                 orderId: string;
             })[];
         } & {
@@ -173,8 +173,8 @@ export declare class OrdersService {
                 id: string;
                 createdAt: Date;
                 price: number;
-                quantity: number;
                 productId: string;
+                quantity: number;
                 orderId: string;
             })[];
         } & {
@@ -231,8 +231,8 @@ export declare class OrdersService {
             id: string;
             createdAt: Date;
             price: number;
-            quantity: number;
             productId: string;
+            quantity: number;
             orderId: string;
         })[];
     } & {
@@ -274,8 +274,8 @@ export declare class OrdersService {
             id: string;
             createdAt: Date;
             price: number;
-            quantity: number;
             productId: string;
+            quantity: number;
             orderId: string;
         })[];
     } & {

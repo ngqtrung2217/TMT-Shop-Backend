@@ -25,7 +25,7 @@ export class ProductsController {
   @UseGuards(JwtAuthGuard)
   create(
     @Body() createProductDto: CreateProductDto,
-    @GetUser('id') userId: string,
+    @GetUser('userId') userId: string,
   ) {
     return this.productsService.create(createProductDto, userId);
   }
@@ -61,7 +61,7 @@ export class ProductsController {
   @UseGuards(JwtAuthGuard)
   findShopProducts(
     @Param('shopId') shopId: string,
-    @GetUser('id') userId: string,
+    @GetUser('userId') userId: string,
   ) {
     return this.productsService.findShopProducts(shopId, userId);
   }
@@ -76,7 +76,7 @@ export class ProductsController {
   update(
     @Param('id') id: string,
     @Body() updateProductDto: UpdateProductDto,
-    @GetUser('id') userId: string,
+    @GetUser('userId') userId: string,
   ) {
     return this.productsService.update(id, updateProductDto, userId);
   }
@@ -92,7 +92,7 @@ export class ProductsController {
   updateStock(
     @Param('id') id: string,
     @Body('quantity', ParseIntPipe) quantity: number,
-    @GetUser('id') userId: string,
+    @GetUser('userId') userId: string,
   ) {
     return this.productsService.updateStock(id, quantity, userId);
   }

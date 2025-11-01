@@ -25,6 +25,7 @@ export class ProductsService {
     if (shop.ownerId !== userId) {
       throw new ForbiddenException(
         'You can only create products for your own shop',
+        userId,
       );
     }
 

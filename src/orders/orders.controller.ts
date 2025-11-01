@@ -51,7 +51,7 @@ export class OrdersController {
   @Get('shop/:shopId')
   findShopOrders(
     @Param('shopId') shopId: string,
-    @GetUser('id') userId: string,
+    @GetUser('userId') userId: string,
     @Query('page', new ParseIntPipe({ optional: true })) page?: number,
     @Query('limit', new ParseIntPipe({ optional: true })) limit?: number,
   ) {
@@ -59,21 +59,21 @@ export class OrdersController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string, @GetUser('id') userId: string) {
+  findOne(@Param('id') id: string, @GetUser('userId') userId: string) {
     return this.ordersService.findOne(id, userId);
   }
 
   @Patch(':id/status')
   updateStatus(
     @Param('id') id: string,
-    @GetUser('id') userId: string,
+    @GetUser('userId') userId: string,
     @Body() updateOrderStatusDto: UpdateOrderStatusDto,
   ) {
     return this.ordersService.updateStatus(id, userId, updateOrderStatusDto);
   }
 
   @Delete(':id')
-  cancel(@Param('id') id: string, @GetUser('id') userId: string) {
+  cancel(@Param('id') id: string, @GetUser('userId') userId: string) {
     return this.ordersService.cancel(id, userId);
   }
 }
