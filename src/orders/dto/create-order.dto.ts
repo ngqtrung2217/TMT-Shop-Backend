@@ -4,6 +4,8 @@ import {
   IsArray,
   ValidateNested,
   IsEnum,
+  IsNumber,
+  IsPositive,
 } from 'class-validator';
 import { Type } from 'class-transformer';
 
@@ -12,12 +14,12 @@ export class OrderItemDto {
   @IsNotEmpty()
   productId: string;
 
-  @IsString()
-  @IsNotEmpty()
+  @IsNumber()
+  @IsPositive()
   quantity: number;
 
-  @IsString()
-  @IsNotEmpty()
+  @IsNumber()
+  @IsPositive()
   price: number;
 }
 

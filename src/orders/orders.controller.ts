@@ -24,7 +24,7 @@ export class OrdersController {
 
   @Post()
   create(
-    @GetUser('id') userId: string,
+    @GetUser('userId') userId: string,
     @Body() createOrderDto: CreateOrderDto,
   ) {
     return this.ordersService.create(userId, createOrderDto);
@@ -41,7 +41,7 @@ export class OrdersController {
 
   @Get('my-orders')
   findUserOrders(
-    @GetUser('id') userId: string,
+    @GetUser('userId') userId: string,
     @Query('page', new ParseIntPipe({ optional: true })) page?: number,
     @Query('limit', new ParseIntPipe({ optional: true })) limit?: number,
   ) {
