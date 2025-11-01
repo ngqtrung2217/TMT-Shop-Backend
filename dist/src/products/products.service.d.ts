@@ -94,8 +94,8 @@ export declare class ProductsService {
             updatedAt: Date;
             userId: string;
             rating: number;
-            comment: string | null;
             productId: string;
+            comment: string | null;
         })[];
         category: {
             id: string;

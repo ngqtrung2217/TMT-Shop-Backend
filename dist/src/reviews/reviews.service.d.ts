@@ -17,8 +17,8 @@ export declare class ReviewsService {
         updatedAt: Date;
         userId: string;
         rating: number;
-        comment: string | null;
         productId: string;
+        comment: string | null;
     }>;
     findByProduct(productId: string): Promise<{
         reviews: ({
@@ -34,8 +34,8 @@ export declare class ReviewsService {
             updatedAt: Date;
             userId: string;
             rating: number;
-            comment: string | null;
             productId: string;
+            comment: string | null;
         })[];
         total: number;
         averageRating: number;
@@ -60,8 +60,8 @@ export declare class ReviewsService {
         updatedAt: Date;
         userId: string;
         rating: number;
-        comment: string | null;
         productId: string;
+        comment: string | null;
     }>;
     remove(id: string, userId: string): Promise<{
         message: string;
