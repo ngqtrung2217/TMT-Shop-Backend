@@ -61,7 +61,7 @@ __decorate([
     (0, common_1.Post)(),
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     __param(0, (0, common_1.Body)()),
-    __param(1, (0, get_user_decorator_1.GetUser)('id')),
+    __param(1, (0, get_user_decorator_1.GetUser)('userId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_product_dto_1.CreateProductDto, String]),
     __metadata("design:returntype", void 0)
@@ -85,7 +85,7 @@ __decorate([
     (0, common_1.Get)('shop/:shopId'),
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     __param(0, (0, common_1.Param)('shopId')),
-    __param(1, (0, get_user_decorator_1.GetUser)('id')),
+    __param(1, (0, get_user_decorator_1.GetUser)('userId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", void 0)
@@ -102,7 +102,7 @@ __decorate([
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
-    __param(2, (0, get_user_decorator_1.GetUser)('id')),
+    __param(2, (0, get_user_decorator_1.GetUser)('userId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, update_product_dto_1.UpdateProductDto, String]),
     __metadata("design:returntype", void 0)
@@ -121,7 +121,7 @@ __decorate([
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)('quantity', common_1.ParseIntPipe)),
-    __param(2, (0, get_user_decorator_1.GetUser)('id')),
+    __param(2, (0, get_user_decorator_1.GetUser)('userId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, Number, String]),
     __metadata("design:returntype", void 0)

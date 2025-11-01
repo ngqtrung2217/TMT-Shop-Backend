@@ -43,11 +43,11 @@ export declare class OrdersService {
         updatedAt: Date;
         userId: string;
         shopId: string;
-        shippingAddress: string;
         paymentMethod: string;
         status: import("@prisma/client").$Enums.OrderStatus;
         orderNumber: string;
         totalAmount: number;
+        shippingAddress: string;
     }>;
     findAll(params?: {
         page?: number;
@@ -89,11 +89,11 @@ export declare class OrdersService {
             updatedAt: Date;
             userId: string;
             shopId: string;
-            shippingAddress: string;
             paymentMethod: string;
             status: import("@prisma/client").$Enums.OrderStatus;
             orderNumber: string;
             totalAmount: number;
+            shippingAddress: string;
         })[];
         meta: {
             total: number;
@@ -136,11 +136,11 @@ export declare class OrdersService {
             updatedAt: Date;
             userId: string;
             shopId: string;
-            shippingAddress: string;
             paymentMethod: string;
             status: import("@prisma/client").$Enums.OrderStatus;
             orderNumber: string;
             totalAmount: number;
+            shippingAddress: string;
         })[];
         meta: {
             total: number;
@@ -183,11 +183,11 @@ export declare class OrdersService {
             updatedAt: Date;
             userId: string;
             shopId: string;
-            shippingAddress: string;
             paymentMethod: string;
             status: import("@prisma/client").$Enums.OrderStatus;
             orderNumber: string;
             totalAmount: number;
+            shippingAddress: string;
         })[];
         meta: {
             total: number;
@@ -241,11 +241,11 @@ export declare class OrdersService {
         updatedAt: Date;
         userId: string;
         shopId: string;
-        shippingAddress: string;
         paymentMethod: string;
         status: import("@prisma/client").$Enums.OrderStatus;
         orderNumber: string;
         totalAmount: number;
+        shippingAddress: string;
     }>;
     updateStatus(id: string, userId: string, updateOrderStatusDto: UpdateOrderStatusDto): Promise<{
         shop: {
@@ -284,11 +284,11 @@ export declare class OrdersService {
         updatedAt: Date;
         userId: string;
         shopId: string;
-        shippingAddress: string;
         paymentMethod: string;
         status: import("@prisma/client").$Enums.OrderStatus;
         orderNumber: string;
         totalAmount: number;
+        shippingAddress: string;
     }>;
     cancel(id: string, userId: string): Promise<{
         message: string;

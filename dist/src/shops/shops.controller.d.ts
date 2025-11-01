@@ -20,8 +20,8 @@ export declare class ShopsController {
         description: string | null;
         logo: string | null;
         banner: string | null;
-        rating: number;
         ownerId: string;
+        rating: number;
     }>;
     findAll(page?: string, limit?: string): Promise<{
         data: ({
@@ -43,8 +43,8 @@ export declare class ShopsController {
             description: string | null;
             logo: string | null;
             banner: string | null;
-            rating: number;
             ownerId: string;
+            rating: number;
         })[];
         meta: {
             total: number;
@@ -67,8 +67,8 @@ export declare class ShopsController {
         description: string | null;
         logo: string | null;
         banner: string | null;
-        rating: number;
         ownerId: string;
+        rating: number;
     })[]>;
     findOne(id: string): Promise<{
         _count: {
@@ -90,8 +90,8 @@ export declare class ShopsController {
         description: string | null;
         logo: string | null;
         banner: string | null;
-        rating: number;
         ownerId: string;
+        rating: number;
     }>;
     update(id: string, userId: string, updateShopDto: UpdateShopDto): Promise<{
         owner: {
@@ -109,8 +109,8 @@ export declare class ShopsController {
         description: string | null;
         logo: string | null;
         banner: string | null;
-        rating: number;
         ownerId: string;
+        rating: number;
     }>;
     remove(id: string, userId: string): Promise<{
         message: string;

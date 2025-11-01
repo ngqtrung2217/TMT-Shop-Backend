@@ -42,11 +42,11 @@ export declare class OrdersController {
         updatedAt: Date;
         userId: string;
         shopId: string;
-        shippingAddress: string;
         paymentMethod: string;
         status: import("@prisma/client").$Enums.OrderStatus;
         orderNumber: string;
         totalAmount: number;
+        shippingAddress: string;
     }>;
     findAll(page?: number, limit?: number, status?: OrderStatus): Promise<{
         data: ({
@@ -82,11 +82,11 @@ export declare class OrdersController {
             updatedAt: Date;
             userId: string;
             shopId: string;
-            shippingAddress: string;
             paymentMethod: string;
             status: import("@prisma/client").$Enums.OrderStatus;
             orderNumber: string;
             totalAmount: number;
+            shippingAddress: string;
         })[];
         meta: {
             total: number;
@@ -129,11 +129,11 @@ export declare class OrdersController {
             updatedAt: Date;
             userId: string;
             shopId: string;
-            shippingAddress: string;
             paymentMethod: string;
             status: import("@prisma/client").$Enums.OrderStatus;
             orderNumber: string;
             totalAmount: number;
+            shippingAddress: string;
         })[];
         meta: {
             total: number;
@@ -176,11 +176,11 @@ export declare class OrdersController {
             updatedAt: Date;
             userId: string;
             shopId: string;
-            shippingAddress: string;
             paymentMethod: string;
             status: import("@prisma/client").$Enums.OrderStatus;
             orderNumber: string;
             totalAmount: number;
+            shippingAddress: string;
         })[];
         meta: {
             total: number;
@@ -234,11 +234,11 @@ export declare class OrdersController {
         updatedAt: Date;
         userId: string;
         shopId: string;
-        shippingAddress: string;
         paymentMethod: string;
         status: import("@prisma/client").$Enums.OrderStatus;
         orderNumber: string;
         totalAmount: number;
+        shippingAddress: string;
     }>;
     updateStatus(id: string, userId: string, updateOrderStatusDto: UpdateOrderStatusDto): Promise<{
         shop: {
@@ -277,11 +277,11 @@ export declare class OrdersController {
         updatedAt: Date;
         userId: string;
         shopId: string;
-        shippingAddress: string;
         paymentMethod: string;
         status: import("@prisma/client").$Enums.OrderStatus;
         orderNumber: string;
         totalAmount: number;
+        shippingAddress: string;
     }>;
     cancel(id: string, userId: string): Promise<{
         message: string;

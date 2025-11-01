@@ -86,7 +86,7 @@ export class OrdersService {
           userId,
           shopId: createOrderDto.shopId,
           totalAmount,
-          shippingAddress: createOrderDto.shippingAddress,
+          shippingAddress: `${createOrderDto.address}, ${createOrderDto.communeName}, ${createOrderDto.provinceName}`,
           paymentMethod: createOrderDto.paymentMethod,
           items: {
             create: orderItems,

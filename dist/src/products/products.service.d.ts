@@ -5,31 +5,31 @@ export declare class ProductsService {
     private prisma;
     constructor(prisma: PrismaService);
     create(createProductDto: CreateProductDto, userId: string): Promise<{
-        shop: {
-            id: string;
-            name: string;
-            logo: string | null;
-        };
         category: {
             id: string;
             name: string;
             slug: string;
         } | null;
+        shop: {
+            id: string;
+            name: string;
+            logo: string | null;
+        };
     } & {
         id: string;
+        isActive: boolean;
+        createdAt: Date;
+        updatedAt: Date;
         name: string;
         description: string | null;
+        rating: number;
+        categoryId: string | null;
         price: number;
         discount: number;
         stock: number;
         images: string[];
-        isActive: boolean;
-        rating: number;
-        soldCount: number;
-        createdAt: Date;
-        updatedAt: Date;
         shopId: string;
-        categoryId: string | null;
+        soldCount: number;
     }>;
     findAll(params?: {
         page?: number;
@@ -43,35 +43,35 @@ export declare class ProductsService {
         sortOrder?: 'asc' | 'desc';
     }): Promise<{
         data: ({
-            shop: {
-                id: string;
-                name: string;
-                rating: number;
-                logo: string | null;
-            };
             category: {
                 id: string;
                 name: string;
                 slug: string;
             } | null;
+            shop: {
+                id: string;
+                name: string;
+                logo: string | null;
+                rating: number;
+            };
             _count: {
                 reviews: number;
             };
         } & {
             id: string;
+            isActive: boolean;
+            createdAt: Date;
+            updatedAt: Date;
             name: string;
             description: string | null;
+            rating: number;
+            categoryId: string | null;
             price: number;
             discount: number;
             stock: number;
             images: string[];
-            isActive: boolean;
-            rating: number;
-            soldCount: number;
-            createdAt: Date;
-            updatedAt: Date;
             shopId: string;
-            categoryId: string | null;
+            soldCount: number;
         })[];
         meta: {
             total: number;
@@ -81,19 +81,6 @@ export declare class ProductsService {
         };
     }>;
     findOne(id: string): Promise<{
-        shop: {
-            id: string;
-            name: string;
-            rating: number;
-            logo: string | null;
-            banner: string | null;
-            ownerId: string;
-        };
-        category: {
-            id: string;
-            name: string;
-            slug: string;
-        } | null;
         reviews: ({
             user: {
                 id: string;
@@ -103,31 +90,44 @@ export declare class ProductsService {
             };
         } & {
             id: string;
-            rating: number;
             createdAt: Date;
             updatedAt: Date;
-            comment: string | null;
             userId: string;
+            rating: number;
+            comment: string | null;
             productId: string;
         })[];
+        category: {
+            id: string;
+            name: string;
+            slug: string;
+        } | null;
+        shop: {
+            id: string;
+            name: string;
+            logo: string | null;
+            banner: string | null;
+            ownerId: string;
+            rating: number;
+        };
         _count: {
             reviews: number;
         };
     } & {
         id: string;
+        isActive: boolean;
+        createdAt: Date;
+        updatedAt: Date;
         name: string;
         description: string | null;
+        rating: number;
+        categoryId: string | null;
         price: number;
         discount: number;
         stock: number;
         images: string[];
-        isActive: boolean;
-        rating: number;
-        soldCount: number;
-        createdAt: Date;
-        updatedAt: Date;
         shopId: string;
-        categoryId: string | null;
+        soldCount: number;
     }>;
     findShopProducts(shopId: string, userId: string): Promise<({
         category: {
@@ -140,64 +140,64 @@ export declare class ProductsService {
         };
     } & {
         id: string;
+        isActive: boolean;
+        createdAt: Date;
+        updatedAt: Date;
         name: string;
         description: string | null;
+        rating: number;
+        categoryId: string | null;
         price: number;
         discount: number;
         stock: number;
         images: string[];
-        isActive: boolean;
-        rating: number;
-        soldCount: number;
-        createdAt: Date;
-        updatedAt: Date;
         shopId: string;
-        categoryId: string | null;
+        soldCount: number;
     })[]>;
     update(id: string, updateProductDto: UpdateProductDto, userId: string): Promise<{
-        shop: {
-            id: string;
-            name: string;
-            logo: string | null;
-        };
         category: {
             id: string;
             name: string;
             slug: string;
         } | null;
+        shop: {
+            id: string;
+            name: string;
+            logo: string | null;
+        };
     } & {
         id: string;
+        isActive: boolean;
+        createdAt: Date;
+        updatedAt: Date;
         name: string;
         description: string | null;
+        rating: number;
+        categoryId: string | null;
         price: number;
         discount: number;
         stock: number;
         images: string[];
-        isActive: boolean;
-        rating: number;
-        soldCount: number;
-        createdAt: Date;
-        updatedAt: Date;
         shopId: string;
-        categoryId: string | null;
+        soldCount: number;
     }>;
     remove(id: string, userId: string): Promise<{
         message: string;
     }>;
     updateStock(id: string, quantity: number, userId: string): Promise<{
         id: string;
+        isActive: boolean;
+        createdAt: Date;
+        updatedAt: Date;
         name: string;
         description: string | null;
+        rating: number;
+        categoryId: string | null;
         price: number;
         discount: number;
         stock: number;
         images: string[];
-        isActive: boolean;
-        rating: number;
-        soldCount: number;
-        createdAt: Date;
-        updatedAt: Date;
         shopId: string;
-        categoryId: string | null;
+        soldCount: number;
     }>;
 }

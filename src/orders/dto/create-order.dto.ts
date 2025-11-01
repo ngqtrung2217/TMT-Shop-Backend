@@ -6,6 +6,7 @@ import {
   IsEnum,
   IsNumber,
   IsPositive,
+  IsOptional,
 } from 'class-validator';
 import { Type } from 'class-transformer';
 
@@ -35,7 +36,23 @@ export class CreateOrderDto {
 
   @IsString()
   @IsNotEmpty()
-  shippingAddress: string;
+  address: string;
+
+  @IsString()
+  @IsNotEmpty()
+  provinceCode: string;
+
+  @IsString()
+  @IsNotEmpty()
+  provinceName: string;
+
+  @IsString()
+  @IsNotEmpty()
+  communeCode: string;
+
+  @IsString()
+  @IsNotEmpty()
+  communeName: string;
 
   @IsString()
   @IsNotEmpty()

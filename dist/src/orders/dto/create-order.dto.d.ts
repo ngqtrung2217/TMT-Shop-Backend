@@ -6,6 +6,10 @@ export declare class OrderItemDto {
 export declare class CreateOrderDto {
     shopId: string;
     items: OrderItemDto[];
-    shippingAddress: string;
+    address: string;
+    provinceCode: string;
+    provinceName: string;
+    communeCode: string;
+    communeName: string;
     paymentMethod: 'COD' | 'CARD' | 'BANK_TRANSFER';
 }

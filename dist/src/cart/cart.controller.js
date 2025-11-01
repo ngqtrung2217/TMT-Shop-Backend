@@ -43,7 +43,7 @@ let CartController = class CartController {
 exports.CartController = CartController;
 __decorate([
     (0, common_1.Post)(),
-    __param(0, (0, get_user_decorator_1.GetUser)('id')),
+    __param(0, (0, get_user_decorator_1.GetUser)('userId')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, add_to_cart_dto_1.AddToCartDto]),
@@ -51,14 +51,14 @@ __decorate([
 ], CartController.prototype, "addToCart", null);
 __decorate([
     (0, common_1.Get)(),
-    __param(0, (0, get_user_decorator_1.GetUser)('id')),
+    __param(0, (0, get_user_decorator_1.GetUser)('userId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], CartController.prototype, "getCart", null);
 __decorate([
     (0, common_1.Patch)(':itemId'),
-    __param(0, (0, get_user_decorator_1.GetUser)('id')),
+    __param(0, (0, get_user_decorator_1.GetUser)('userId')),
     __param(1, (0, common_1.Param)('itemId')),
     __param(2, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -67,7 +67,7 @@ __decorate([
 ], CartController.prototype, "updateCartItem", null);
 __decorate([
     (0, common_1.Delete)(':itemId'),
-    __param(0, (0, get_user_decorator_1.GetUser)('id')),
+    __param(0, (0, get_user_decorator_1.GetUser)('userId')),
     __param(1, (0, common_1.Param)('itemId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, String]),
@@ -75,7 +75,7 @@ __decorate([
 ], CartController.prototype, "removeFromCart", null);
 __decorate([
     (0, common_1.Delete)(),
-    __param(0, (0, get_user_decorator_1.GetUser)('id')),
+    __param(0, (0, get_user_decorator_1.GetUser)('userId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
