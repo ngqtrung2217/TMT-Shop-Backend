@@ -5,10 +5,10 @@ export declare class UsersService {
     private prisma;
     constructor(prisma: PrismaService);
     getProfile(userId: string): Promise<{
-        id: string;
         email: string;
         firstName: string | null;
         lastName: string | null;
+        id: string;
         phone: string | null;
         avatar: string | null;
         role: import("@prisma/client").$Enums.UserRole;
@@ -17,10 +17,10 @@ export declare class UsersService {
         updatedAt: Date;
     }>;
     updateProfile(userId: string, updateProfileDto: UpdateProfileDto): Promise<{
-        id: string;
         email: string;
         firstName: string | null;
         lastName: string | null;
+        id: string;
         phone: string | null;
         avatar: string | null;
         role: import("@prisma/client").$Enums.UserRole;
@@ -35,11 +35,11 @@ export declare class UsersService {
         message: string;
     }>;
     findById(userId: string): Promise<{
-        id: string;
         email: string;
         password: string;
         firstName: string | null;
         lastName: string | null;
+        id: string;
         phone: string | null;
         avatar: string | null;
         role: import("@prisma/client").$Enums.UserRole;
@@ -48,11 +48,11 @@ export declare class UsersService {
         updatedAt: Date;
     } | null>;
     findByEmail(email: string): Promise<{
-        id: string;
         email: string;
         password: string;
         firstName: string | null;
         lastName: string | null;
+        id: string;
         phone: string | null;
         avatar: string | null;
         role: import("@prisma/client").$Enums.UserRole;

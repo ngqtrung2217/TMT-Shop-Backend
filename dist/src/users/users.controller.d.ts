@@ -5,10 +5,10 @@ export declare class UsersController {
     private readonly usersService;
     constructor(usersService: UsersService);
     getProfile(userId: string): Promise<{
-        id: string;
         email: string;
         firstName: string | null;
         lastName: string | null;
+        id: string;
         phone: string | null;
         avatar: string | null;
         role: import("@prisma/client").$Enums.UserRole;
@@ -17,10 +17,10 @@ export declare class UsersController {
         updatedAt: Date;
     }>;
     updateProfile(userId: string, updateProfileDto: UpdateProfileDto): Promise<{
-        id: string;
         email: string;
         firstName: string | null;
         lastName: string | null;
+        id: string;
         phone: string | null;
         avatar: string | null;
         role: import("@prisma/client").$Enums.UserRole;
